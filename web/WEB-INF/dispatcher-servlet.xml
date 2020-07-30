@@ -6,11 +6,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <mvc:annotation-driven>
-
     </mvc:annotation-driven>
 
     <context:component-scan base-package="com.sangwookim.controller"/>
-    <context:component-scan base-package="com.sangwookim.repository"/>
     <context:component-scan base-package="com.sangwookim.service"/>
 
     <!-- Controller의 메서드에서 반환하는 문자열 앞 뒤에 붙힐 경로 정보를 셋팅한다. -->
