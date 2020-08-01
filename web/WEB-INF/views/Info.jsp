@@ -116,7 +116,6 @@
 
         function getCharacterEquipment() {
             DNFService.getCharacterEquipment(serverId, characterId, function (result) {
-                alert(result);
             });
         }
 
