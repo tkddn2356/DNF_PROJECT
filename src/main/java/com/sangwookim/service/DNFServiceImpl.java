@@ -39,21 +39,6 @@ public class DNFServiceImpl implements DNFService{
         return result.toString();
     }
 
-    @Override
-    public JSONObject getResult(String urlStr, String target) {
-        try{
-            URL url = new URL(urlStr);
-            HttpURLConnection urlconnection = (HttpURLConnection) url.openConnection();
-            urlconnection.setRequestMethod("GET");
-            BufferedReader br = new BufferedReader(new InputStreamReader(urlconnection.getInputStream(),"UTF-8"));
-            JSONObject json = new JSONObject(br.readLine());
-            urlconnection.disconnect();
-            return json.getJSONObject(target);
-        }catch(Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
 
     @Override
     public String searchCharacter(String serverId, String characterName) throws UnsupportedEncodingException {

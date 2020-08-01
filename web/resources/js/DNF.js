@@ -50,7 +50,7 @@ var DNFService = (function () {
         $.ajax({
             type: 'get',
             url: '/getCharacterStatus/'+ serverId +"/" + characterId,
-            dataType: 'text', // 리턴해주는 타입을 지정해줘야함
+            dataType: 'application/json', // 리턴해주는 타입을 지정해줘야함
             async: false,
             success: function (result, status, xhr) {
                 if (callback) {
@@ -69,7 +69,7 @@ var DNFService = (function () {
         $.ajax({
             type: 'get',
             url: '/getCharacterEquipment/'+ serverId +"/" + characterId,
-            dataType: 'text',
+            dataType: 'application/json',
             async: false,
             success: function (result, status, xhr) {
                 if (callback) {

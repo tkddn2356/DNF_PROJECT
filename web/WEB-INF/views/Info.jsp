@@ -90,6 +90,7 @@
         getCharacterEquipment();
         function getCharacterBasicInfo() {
             DNFService.searchCharacter(serverId, characterName, function (result) {
+                alert(result);
                 var resultArray = JSON.parse(result);
                 var resultArrayRows = resultArray.rows;
                 characterId = resultArrayRows[0].characterId;
@@ -107,6 +108,7 @@
         }
 
         function getCharacterStatus() {
+            console.log(characterId);
             DNFService.getCharacterStatus(serverId, characterId, function (result) {
                 alert(result);
             });
