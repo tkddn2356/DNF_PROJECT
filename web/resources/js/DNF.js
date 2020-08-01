@@ -32,6 +32,45 @@ var DNFService = (function () {
             type: 'get',
             url: '/searchCharacter/'+ server +"/" + characterName,
             dataType: 'text', // 리턴해주는 타입을 지정해줘야함
+            async: false,
+            success: function (result, status, xhr) {
+                if (callback) {
+                    callback(result);
+                }
+            },
+            error: function (xhr, status, er) {
+                if (error) {
+                    error(er);
+                }
+            }
+        })
+    }
+
+    function getCharacterStatus(serverId, characterId, callback, error) {
+        $.ajax({
+            type: 'get',
+            url: '/getCharacterStatus/'+ serverId +"/" + characterId,
+            dataType: 'text', // 리턴해주는 타입을 지정해줘야함
+            async: false,
+            success: function (result, status, xhr) {
+                if (callback) {
+                    callback(result);
+                }
+            },
+            error: function (xhr, status, er) {
+                if (error) {
+                    error(er);
+                }
+            }
+        })
+    }
+
+    function getCharacterEquipment(serverId, characterId, callback, error) {
+        $.ajax({
+            type: 'get',
+            url: '/getCharacterEquipment/'+ serverId +"/" + characterId,
+            dataType: 'text',
+            async: false,
             success: function (result, status, xhr) {
                 if (callback) {
                     callback(result);
@@ -40,8 +79,7 @@ var DNFService = (function () {
             error: function (xhr, status, er) {
                 if (error) {
                     error(er)
-                }
-                ;
+                };
             }
         })
     }
@@ -52,7 +90,9 @@ var DNFService = (function () {
 
     return {
         getServerCode:getServerCode,
-        searchCharacter:searchCharacter
+        searchCharacter:searchCharacter,
+        getCharacterStatus:getCharacterStatus,
+        getCharacterEquipment: getCharacterEquipment
     };
 
 })();

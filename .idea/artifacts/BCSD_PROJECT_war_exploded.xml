@@ -47,6 +47,7 @@
           <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
           <element id="library" level="project" name="Spring-3.2.18.RELEASE" />
           <element id="library" level="project" name="Spring MVC-3.2.18.RELEASE" />
+          <element id="library" level="project" name="Maven: org.json:json:20200518" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="DNF_PROJECT_test/web/Web" />
