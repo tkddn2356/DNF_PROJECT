@@ -90,14 +90,12 @@
         getCharacterEquipment();
         function getCharacterBasicInfo() {
             DNFService.searchCharacter(serverId, characterName, function (result) {
-                alert(result);
-                var resultArray = JSON.parse(result);
-                var resultArrayRows = resultArray.rows;
-                characterId = resultArrayRows[0].characterId;
-                level = resultArrayRows[0].level;
-                jobId = resultArrayRows[0].jobId;
-                jobName = resultArrayRows[0].jobName;
-                jobGrowName = resultArrayRows[0].jobGrowName;
+                var BasicInfo = result.rows;
+                characterId = BasicInfo[0].characterId;
+                level = BasicInfo[0].level;
+                jobId = BasicInfo[0].jobId;
+                jobName = BasicInfo[0].jobName;
+                jobGrowName = BasicInfo[0].jobGrowName;
                 var characterImgSrc = "https://img-api.neople.co.kr/df/servers/" + serverId + "/characters/" + characterId + "?zoom=1";
                 var backgroundImgSrc = "https://cdn.df.nexon.com/img/web/char/bg_char.jpg";
                 var characterImg = "<img class='card-img-top' style='background-image: url(" + backgroundImgSrc + ")' src='" + characterImgSrc + "'>";
@@ -110,12 +108,13 @@
         function getCharacterStatus() {
             console.log(characterId);
             DNFService.getCharacterStatus(serverId, characterId, function (result) {
-                alert(result);
+                console.log(result.status);
             });
         }
 
         function getCharacterEquipment() {
             DNFService.getCharacterEquipment(serverId, characterId, function (result) {
+                console.log(result.equipment);
             });
         }
 

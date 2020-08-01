@@ -24,7 +24,7 @@ public class DNFController {
 
     @ResponseBody
     @RequestMapping(value="/searchCharacter/{serverId}/{characterName}", method= RequestMethod.GET,
-            produces = "application/text; charset=utf8")
+            produces = "application/json; charset=utf8")
     public ResponseEntity<String> searchCharacter(@PathVariable("serverId")String serverId,
                                                   @PathVariable("characterName")String characterName) throws UnsupportedEncodingException {
         return new ResponseEntity<>(service.searchCharacter(serverId, characterName), HttpStatus.OK);
@@ -32,7 +32,7 @@ public class DNFController {
 
     @ResponseBody
     @RequestMapping(value="/getCharacterStatus/{serverId}/{characterId}", method= RequestMethod.GET,
-            produces = "application/text; charset=utf8")
+            produces = "application/json; charset=utf8")
     public ResponseEntity<String> getCharacterStatus(@PathVariable("serverId")String serverId,
                                                   @PathVariable("characterId")String characterId) throws UnsupportedEncodingException {
         return new ResponseEntity<>(service.getCharacterStatus(serverId, characterId), HttpStatus.OK);
@@ -40,7 +40,7 @@ public class DNFController {
 
     @ResponseBody
     @RequestMapping(value="/getCharacterEquipment/{serverId}/{characterId}", method= RequestMethod.GET,
-            produces = "application/text; charset=utf8")
+            produces = "application/json; charset=utf8")
     public ResponseEntity<String> getCharacterEquipment(@PathVariable("serverId")String serverId,
                                                      @PathVariable("characterId")String characterId) throws UnsupportedEncodingException {
         return new ResponseEntity<>(service.getCharacterEquipment(serverId, characterId), HttpStatus.OK);
